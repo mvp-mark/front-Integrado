@@ -25,6 +25,14 @@ export default function Navbar(props) {
       const CadProducts ='/CadProducts';
       history.push(CadProducts);
     }
+    function handleShelves(){
+      const CadShelves ='/CadShelves';
+      history.push(CadShelves);
+    }
+    function handleLogout(){
+      const Logout ='/';
+      history.push(Logout);
+    }
     
   
   return (
@@ -53,8 +61,8 @@ export default function Navbar(props) {
               onClose={handleClose}
               TransitionComponent={Fade}
             >  <MenuItem onClick={handleProdcad}>Cadastrar Produtos</MenuItem>
-              <MenuItem onClick={handleClose}>Cadastrar Prateleiras</MenuItem>
-              <MenuItem onClick={handleClose}>Logout</MenuItem>
+              <MenuItem onClick={handleShelves}>Cadastrar Prateleiras</MenuItem>
+              <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </Menu>
            
           </ButtonOverlay>
