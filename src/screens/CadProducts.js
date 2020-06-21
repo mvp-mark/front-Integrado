@@ -19,7 +19,7 @@ function CadProducts(props) {
   return (
     <Container>
       <Navbar
-        title={"undefined"}
+        // title={"undefined"}
         style={{
           height: 48,
           backgroundColor: "rgba(63,81,181,1)",
