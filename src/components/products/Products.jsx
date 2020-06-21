@@ -47,8 +47,8 @@ export default function SimpleTable() {
             <TableCell>Nome do Produto</TableCell>
             <TableCell align="right">SKU</TableCell>
             <TableCell align="right">Local</TableCell>
-            <TableCell align="right">Quantidade</TableCell>
             <TableCell align="right">Posição</TableCell>
+            <TableCell align="right">Quantidade</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
