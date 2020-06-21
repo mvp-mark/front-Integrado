@@ -1,16 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import styled, { css } from "styled-components";
 import MaterialHeader1 from "../components/MaterialHeader1";
-import MaterialFixedLabelTextbox from "../components/MaterialFixedLabelTextbox";
-import MaterialCheckboxWithLabel from "../components/MaterialCheckboxWithLabel";
-import MaterialButtonViolet from "../components/MaterialButtonViolet";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
+import axios from "axios";
 
 
 
 function Login(props) {
+
   return (
     <>
       <MaterialHeader1
@@ -59,7 +58,7 @@ function Login(props) {
           ><p>Lembrar desta senha</p>
           </Checkbox>
           <Button
-            variant="contained" color="primary"
+            varcolor="primary"iant="contained" 
             style={{
               height: 36,
               width: 100,
@@ -68,7 +67,7 @@ function Login(props) {
               top: 189
             }}
             href="/Produtos"
-
+            varcolor="primary"
           > Entrar</Button>
         </LoginComp>
       </Center>

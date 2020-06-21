@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import styled, { css } from "styled-components";
 import Navbar from "../components/Navbar";
-import Product from "../components/Product";
+import Product from "./Product";
 import MaterialIconTextButtonsFooter from "../components/MaterialIconTextButtonsFooter";
+import SimpleTable from "../components/products/Products"
 
 function Produtos(props) {
   return (
@@ -15,17 +16,18 @@ function Produtos(props) {
           }}
           title="Produtos"
         ></Navbar>
-        <ItemProduct>
+        <SimpleTable/>
+        {/* <ItemProduct>
           <Product
             style={{
               height: 55,
               margin: 0,
               alignSelf: "stretch"
             }}
-            Name="CAMISA DOIDA"
-            quantity="50"
-            sku="SKU: FLA-10-B"
-            localEstante1="Local: estante 1"
+            Name="CAMISA DOIDA - Amarela"
+            Quantity="50"
+            Sku="FLA-10-B"
+            LocalEstante="estante 1"
           ></Product>
           <Product
             style={{
@@ -33,22 +35,34 @@ function Produtos(props) {
               margin: 1,
               alignSelf: "stretch"
             }}
-          ></Product>
+            Name="CAMISA DOIDA - Preta"
+            Quantity="50"
+            Sku="FLA-10-B"
+            LocalEstante="estante 1"
+            ></Product>
           <Product
+              Name="CAMISA DOIDA - Azul"
+              Quantity="50"
+              Sku="FLA-10-B"
+              LocalEstante="estante 1"
+              style={{
+                height: 55,
+                margin: 1,
+                alignSelf: "stretch"
+              }}
+              ></Product>
+          <Product
+              Name="CAMISA DOIDA - Vermelha"
+              Quantity="50"
+              Sku="FLA-10-B"
+              LocalEstante="estante 1"
             style={{
               height: 55,
               margin: 1,
               alignSelf: "stretch"
             }}
           ></Product>
-          <Product
-            style={{
-              height: 55,
-              margin: 1,
-              alignSelf: "stretch"
-            }}
-          ></Product>
-        </ItemProduct>
+        </ItemProduct> */}
       </NavbarColumn>
       <NavbarColumnFiller></NavbarColumnFiller>
       <MaterialIconTextButtonsFooter

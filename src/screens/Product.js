@@ -4,14 +4,16 @@ import styled, { css } from "styled-components";
 function Product(props) {
   return (
     <Container {...props}>
+
+
       <Rect>
         <NameRow>
-          <Name>Nome: Camisa Preta- - Flamengo</Name>
-          <Sku>SKU: FLA-10-B</Sku>
-          <LocalEstante1>Local:estante 1</LocalEstante1>
+          <Name>{props.Name || "Nome: Camisa Preta- - Flamengo"}</Name>
+          <Sku>{`SKU:${props.Sku}` || `SKU: FLA-10-B`}</Sku>
+  <LocalEstante>{`Local:${props.LocalEstante}`|| "Local:estante 1"}</LocalEstante>
         </NameRow>
         <NameRowFiller></NameRowFiller>
-        <Quantity>Qtd:80</Quantity>
+        <Quantity>{`Qtd:${props.Quantity} ` || "Qtd:80"}</Quantity>
       </Rect>
     </Container>
   );
@@ -45,7 +47,7 @@ const Sku = styled.span`
   margin-left: 20vw;
 `;
 
-const LocalEstante1 = styled.span`
+const LocalEstante = styled.span`
   font-family: Roboto;
   font-style: normal;
   font-weight: regular;

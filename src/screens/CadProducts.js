@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import styled, { css } from "styled-components";
 import Navbar from "../components/Navbar";
 import MaterialStackedLabelTextbox from "../components/MaterialStackedLabelTextbox";
@@ -6,6 +6,16 @@ import MaterialButtonPrimary from "../components/MaterialButtonPrimary";
 import MaterialButtonViolet1 from "../components/MaterialButtonViolet1";
 
 function CadProducts(props) {
+//   const [ location, setLocation] = useState([]);
+  
+//   useEffectt(() => {
+//     axios.get('https://projeto--integrado.herokuapp.com/shelves').then(response => {
+//         const idLocations = response.data.map(shelve => shelve.id);
+
+//         setLocation(location);
+//     });
+// }, []);
+
   return (
     <Container>
       <Navbar

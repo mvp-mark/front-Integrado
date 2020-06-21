@@ -5,8 +5,13 @@ import MaterialStackedLabelTextbox from "../components/MaterialStackedLabelTextb
 import { Link } from "react-router-dom";
 import MaterialButtonPrimary from "../components/MaterialButtonPrimary";
 import MaterialButtonViolet1 from "../components/MaterialButtonViolet1";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 function CadShelves(props) {
+
+
+
   return (
     <>
       <Navbar
@@ -20,73 +25,108 @@ function CadShelves(props) {
           right: 0
         }}
         title="Cadastrar Estante"
-      ></Navbar>
+      />
       <Center>
         <Group1>
-          <MaterialStackedLabelTextbox
+          <TextField
             label={"undefined"}
             inputStyle="Input"
+            variant="outlined"
             style={{
               height: 60,
               width: 375,
               position: "absolute",
               top: 6,
-              left: 0
+              left: 0,
+              marginBottom: 8
             }}
             label="Endereço"
-            inputStyle="Estante X"
-          ></MaterialStackedLabelTextbox>
-          <MaterialStackedLabelTextbox
+          // inputStyle="Estante X"
+          ></TextField>
+          <TextField
             label={"undefined"}
             inputStyle="Input"
+            variant="outlined"
             style={{
               height: 60,
               width: 375,
               position: "absolute",
               top: 60,
-              left: 0
+              left: 0,
+              marginTop: 8
             }}
             inputStyle="8"
             label="Posição"
-          ></MaterialStackedLabelTextbox>
-          <MaterialStackedLabelTextbox
+          ></TextField>
+          <TextField
             label={"undefined"}
+            variant="outlined"
             inputStyle="Input"
             style={{
               height: 60,
               width: 375,
               position: "absolute",
               top: 120,
+              marginTop: 12,
               left: 0
             }}
             label="Descrição"
             inputStyle="Estante de roupas"
-          ></MaterialStackedLabelTextbox>
+          ></TextField>
           <Rect1></Rect1>
         </Group1>
       </Center>
-      <Link to="/Produtos">
-        <Button>
-          <ButtonOverlay>
-            <MaterialButtonPrimary
-              caption={"undefined"}
-              style={{
-                height: 36,
-                width: 100
-              }}
-              caption="Voltar"
-            ></MaterialButtonPrimary>
-            <MaterialButtonViolet1
-              caption={"undefined"}
-              style={{
-                height: 36,
-                width: 100
-              }}
-              caption="Cadastrar"
-            ></MaterialButtonViolet1>
-          </ButtonOverlay>
-        </Button>
-      </Link>
+      {/* <Link to="/Produtos"> */}
+      <div style={{
+        justifyContent: "space-between",
+        position: "absolute",
+      }}>
+        <ButtonOverlay>
+          <Button
+            caption={"undefined"}
+            label="voltar"
+            style={{
+              height: 36,
+              flex: 1,
+              width: 100,
+              flexDirection: "row",
+              // width: "375px",
+              // height: "96px",
+              justifyContent: "space-between",
+              position: "absolute",
+              top: "602px",
+              left: "300px",
+              alignItems: "center",
+              border: "none",
+            }}
+            color="secondary"
+            caption="Voltar"
+          >Voltar</Button>
+          <Button
+            varcolor="primary"
+            label="Cadastrar"
+            style={{
+              height: 36,
+              flex: 1,
+              flexDirection: "row",
+              justifyContent: "space-between",
+
+              // width: 50,
+              // display: "outside",
+              // width: "375px",
+              // height: "96px",
+              // justifyContent: "space-between",
+              position: "absolute",
+              top: "602px",
+              left: "496px",
+              // alignItems: "center",
+              border: "1px",
+            }}
+            color="primary"
+          > Cadastrar</Button>
+        </ButtonOverlay>
+      </div>
+      {/* </Link> */}
     </>
   );
 }
@@ -96,7 +136,7 @@ const ButtonOverlay = styled.button`
  background: none;
  height: 100%;
  width: 100%;
- border:none
+ border:1px
  `;
 const Center = styled.div`
   top: 0;
@@ -143,16 +183,16 @@ const Rect1 = styled.div`
   flex-direction: column;
 `;
 
-const Button = styled.div`
-  flex-direction: row;
-  width: 375px;
-  height: 96px;
-  justify-content: space-between;
-  position: absolute;
-  top: 402px;
-  left: 496px;
-  align-items: center;
-  border: none;
-`;
+// const Button = styled.div`
+// flex-direction: row;
+// width: 375px;
+// height: 96px;
+// justify-content: space-between;
+// position: absolute;
+// top: 402px;
+// left: 496px;
+// align-items: center;
+// border: none;
+// `;
 
 export default CadShelves;
