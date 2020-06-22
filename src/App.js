@@ -13,10 +13,10 @@ function App() {
     <Router>
       <Route path="/" exact component={Login} />
       <Route path="/Login/" exact component={Login} />
-      <Route path="/Produtos/" exact component={Produtos} />
+      <Route path="/Produtos/" exact component={Dashboard} />
       <Route path="/CadProducts/" exact component={CadProducts} />
       <Route path="/CadShelves/" exact component={CadShelves} />
-      <Route path="/Dashboard/" exact component={Dashboard} />
+      {/* <Route path="/Dashboard/" exact component={Dashboard} /> */}
     </Router>
   );
 }

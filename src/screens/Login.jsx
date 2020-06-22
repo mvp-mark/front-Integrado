@@ -4,6 +4,7 @@ import MaterialHeader1 from "../components/MaterialHeader1";
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Checkbox from '@material-ui/core/Checkbox';
+import SignInSide from '../components/Login';
 import axios from "axios";
 
 
@@ -12,7 +13,7 @@ function Login(props) {
 
   return (
     <>
-      <MaterialHeader1
+      {/* <MaterialHeader1
         style={{
           height: 56,
           position: "absolute",
@@ -20,9 +21,10 @@ function Login(props) {
           top: 0,
           right: 0
         }}
-      ></MaterialHeader1>
+      ></MaterialHeader1> */}
       <Center>
-        <LoginComp>
+        <SignInSide/>
+        {/* <LoginComp>
           <TextField
             id="outlined-basic"
             variant="outlined"
@@ -69,7 +71,7 @@ function Login(props) {
             href="/Produtos"
             varcolor="primary"
           > Entrar</Button>
-        </LoginComp>
+        </LoginComp> */}
       </Center>
     </>
   );
