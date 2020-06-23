@@ -22,7 +22,7 @@ import { useHistory } from "react-router-dom";
 
 
 
-import { mainListItems, secondaryListItems } from './Dashboard/ListItem';
+import Coisinha from './Dashboard/ListItem';
 import Chart from './Dashboard/Chart';
 import Deposits from './Dashboard/Deposits';
 import { makeStyles } from "@material-ui/core";
@@ -31,99 +31,99 @@ import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-      display: 'flex',
+    display: 'flex',
   },
   toolbar: {
-      paddingRight: 24, // keep right padding when drawer closed
+    paddingRight: 24, // keep right padding when drawer closed
   },
   toolbarIcon: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'flex-end',
-      padding: '0 8px',
-      ...theme.mixins.toolbar,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
   },
   appBar: {
-      zIndex: theme.zIndex.drawer + 1,
-      transition: theme.transitions.create(['width', 'margin'], {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-      }),
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
   },
   appBarShift: {
-      marginLeft: "240px",
-      width: `calc(100% - 240px)`,
-      transition: theme.transitions.create(['width', 'margin'], {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-      }),
+    marginLeft: "240px",
+    width: `calc(100% - 240px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
   menuButton: {
-      marginRight: 36,
+    marginRight: 36,
   },
   menuButtonHidden: {
-      display: 'none',
+    display: 'none',
   },
   title: {
-      flexGrow: 1,
+    flexGrow: 1,
   },
   drawerPaper: {
-      position: 'relative',
-      whiteSpace: 'nowrap',
-      width: "240px",
-      transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.enteringScreen,
-      }),
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: "240px",
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
   },
   drawerPaperClose: {
-      overflowX: 'hidden',
-      transition: theme.transitions.create('width', {
-          easing: theme.transitions.easing.sharp,
-          duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(7),
-      [theme.breakpoints.up('sm')]: {
-          width: theme.spacing(9),
-      },
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    width: theme.spacing(7),
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing(9),
+    },
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
-      flexGrow: 1,
-      height: '100vh',
-      overflow: 'auto',
+    flexGrow: 1,
+    height: '100vh',
+    overflow: 'auto',
   },
   container: {
-      paddingTop: theme.spacing(4),
-      paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
   },
   paper: {
-      padding: theme.spacing(2),
-      display: 'flex',
-      overflow: 'auto',
-      flexDirection: 'column',
+    padding: theme.spacing(2),
+    display: 'flex',
+    overflow: 'auto',
+    flexDirection: 'column',
   },
   fixedHeight: {
-      height: 240,
+    height: 240,
   },
 }));
 
 export default function Navbar(props) {
-  const classes = useStyles();    
+  const classes = useStyles();
 
-const drawerWidth = 240;
+  const drawerWidth = 240;
   const [open, setOpen] = React.useState(true);
 
-  
+
 
   const handleDrawerOpen = () => {
-      setOpen(true);
+    setOpen(true);
   };
   const handleDrawerClose = () => {
-      setOpen(false);
+    setOpen(false);
   };
   // const open = Boolean(anchorEl);
-  const history = useHistory();
+  // const history = useHistory();
 
   // function handleClick(event) {
   //   setAnchorEl(event.currentTarget);
@@ -133,18 +133,18 @@ const drawerWidth = 240;
   //   setAnchorEl(null);
   // };
 
-  function handleProdcad() {
-    const CadProducts = '/CadProducts';
-    history.push(CadProducts);
-  }
-  function handleShelves() {
-    const CadShelves = '/CadShelves';
-    history.push(CadShelves);
-  }
-  function handleLogout() {
-    const Logout = '/';
-    history.push(Logout);
-  }
+  // function handleProdcad() {
+  //   const CadProducts = '/CadProducts';
+  //   history.push(CadProducts);
+  // }
+  // function handleShelves() {
+  //   const CadShelves = '/CadShelves';
+  //   history.push(CadShelves);
+  // }
+  // function handleLogout() {
+  //   const Logout = '/';
+  //   history.push(Logout);
+  // }
 
 
   // const drawerWidth = 240;
@@ -154,9 +154,9 @@ const drawerWidth = 240;
 
 
   return (
-    
+
     // <div>
-<>
+    <>
       <AppBar position="absolute" className={clsx(classes.appBar, open && classes.appBarShift)}>
         <Toolbar className={classes.toolbar}>
           <IconButton
@@ -170,7 +170,7 @@ const drawerWidth = 240;
           </IconButton>
           <Typography component="h1" variant="h6" color="inherit" noWrap className={classes.title}>
             {props.title || "Dashboard"}
-</Typography>
+          </Typography>
           <IconButton color="inherit">
             <Badge badgeContent={4} color="secondary">
               <NotificationsIcon />
@@ -191,8 +191,10 @@ const drawerWidth = 240;
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>         <Divider />
-        <List>{secondaryListItems}</List>
+        <List>
+          <Coisinha /></List>
+        {/* <Divider />
+        <List>{secondaryListItems}</List> */}
       </Drawer>
       {/* // <Container {...props}> */}
       {/* //   <LeftIconButton> */}
