@@ -11,7 +11,7 @@ import LayersIcon from '@material-ui/icons/Layers';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { useHistory } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
-
+import SearchIcon from '@material-ui/icons/Search';
 
 
 
@@ -30,6 +30,10 @@ export default function Coisinha(){
   function handleShelves() {
     const CadShelves = '/CadShelves';
     history.push(CadShelves);
+  }
+  function handleSearch() {
+    const Search = '/Search';
+    history.push(Search);
   }
   function handleLogout() {
     const Logout = '/';
@@ -57,6 +61,12 @@ export default function Coisinha(){
         <LayersIcon />
       </ListItemIcon>
       <ListItemText primary="Cadastrar Localidade"  />
+    </ListItem>
+    <ListItem button onClick={handleSearch}>
+      <ListItemIcon>
+        <SearchIcon />
+      </ListItemIcon>
+      <ListItemText primary="Busca"  />
     </ListItem>
     <Divider />
 <ListSubheader inset onClick={handleLogout}>Deslogar</ListSubheader>
