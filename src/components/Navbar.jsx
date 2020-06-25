@@ -112,7 +112,7 @@ export default function Navbar(props) {
   const classes = useStyles();
 
   const drawerWidth = 240;
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
 
 

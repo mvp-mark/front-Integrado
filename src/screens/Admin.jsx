@@ -1,4 +1,4 @@
-import React, { useEffect,useState } from 'react';
+import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,15 +19,14 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SimpleTable from "../components/products/Products"
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
 
 import { mainListItems, secondaryListItems } from '../components/Dashboard/ListItem';
 import Chart from '../components/Dashboard/Chart';
 import Deposits from '../components/Dashboard/Deposits';
 import Navbar from '../components/Navbar';
-import TextField from '@material-ui/core/TextField';
-import Autocomplete from '@material-ui/lab/Autocomplete';
-import api from "../services/api";
-
+import AvatarDoido from '../components/Avatar';
 // import Orders from './Orders';
 
 function Copyright() {
@@ -120,24 +119,13 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
     },
     fixedHeight: {
-        height: 240,
+        height: 320,
     },
 }));
 
-export default function Search() {
+export default function Admin() {
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        async function loadItems() {
-          const response = await api.get("/products");
-    
-          setProducts(response.data);
-        }
-        loadItems();
-      }, []);
-
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -149,37 +137,83 @@ export default function Search() {
     return (
         <div className={classes.root}>
             <CssBaseline />
-            <Navbar title="Busca de produtos" />
+            <Navbar title="Editar o Perfil" />
 
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    <Grid container spacing={6}>
+                    <Grid container spacing={8} >
                         {/* Chart */}
-                        <Grid item xs={12} md={8} lg={12}>
+                        <Grid item xs={12} md={8} lg={9}>
                             <Paper className={fixedHeightPaper}>
-                                <Autocomplete
-                                    id="combo-box-demo"
-                                    options={products}
-                                    getOptionLabel={(option) => option.name}
-                                    // style={{ width: 300 }}
-                                    renderInput={(params) => <TextField {...params} label="Busca de Produtos" variant="outlined" />}
-                                />
+                                <form className={classes.form} noValidate>
+                                    <TextField
+                                        variant="outlined"
+                                        margin="normal"
+                                        // required
+                                        fullWidth
+                                        id="email"
+                                        value="ADMIN"
+                                        label="Nome"
+                                        name="Nome"
+                                        // autoComplete="email"
+                                        autoFocus
+                                    />
+                                    <TextField
+                                        variant="outlined"
+                                        margin="normal"
+                                        // required
+                                        fullWidth
+                                        name="description"
+                                        label="Mudar a Senha"
+                                        value="nota 10 quer apostar?"
+                                        type="password"
+                                        id="password"
+                                        autoComplete="Senha"
+                                    />
+                                    <TextField
+                                        variant="outlined"
+                                        margin="normal"
+                                        // required
+                                        fullWidth
+                                        name="email"
+                                        label="Editar E-mail"
+                                        // type="password"
+                                        value="email@Uninorte.edu.br"
+                                        id="email"
+                                        autoComplete="email"
+                                    />
+                                    <Button
+                                        type="submit"
+                                        fullWidth
+                                        variant="contained"
+                                        color="primary"
+                                        className={classes.submit}
+                                    >
+                                        Atualizar
+          </Button>
+                                    {/* <Grid container>
+            <Grid item xs>
+              <Link href="#" variant="body2">
+                Forgot password?
+              </Link>
+            </Grid>
+            <Grid item>
+              <Link href="#" variant="body2">
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+          </Grid> */}
+                                </form>
                             </Paper>
                         </Grid>
                         {/* Recent Deposits */}
-                        {/* <Grid item xs={12} md={4} lg={3}> */}
-                        {/* <Paper className={fixedHeightPaper}> */}
-                        {/* <Deposits /> */}
-                        {/* </Paper> */}
-                        {/* </Grid> */}
+                        <Grid item xs={12} md={4} lg={3}>
+                            <Paper className={fixedHeightPaper}>
+                                <AvatarDoido />
+                            </Paper>
+                        </Grid>
                         {/* Recent Orders */}
-                        {/* <Grid item xs={12}> */}
-                        {/* <Paper className={classes.paper}> */}
-                        {/* <Orders /> */}
-                        {/* <SimpleTable /> */}
-                        {/* </Paper> */}
-                        {/* </Grid> */}
                     </Grid>
                     <Box pt={4}>
                         <Copyright />

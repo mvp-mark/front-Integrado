@@ -2,7 +2,10 @@ import React from 'react';
 import Link from '@material-ui/core/Link';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Title from './Title';
+import Title from './Dashboard/Title';
+import  Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+
 
 function preventDefault(event) {
   event.preventDefault();
@@ -14,22 +17,29 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Deposits() {
+export default function AvatarDoido() {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <Title>Depósitos Recentes </Title>
+      <>
+      <Title>Avatar </Title>
       <Typography component="p" variant="h4">
-        R$3,024.00
+
       </Typography>
       <Typography color="textSecondary" className={classes.depositContext}>
-        em 15 Junho, 2020
+        <Avatar src="https://source.unsplash.com/random" style={{width: '10vw', height: '10vw', alignSelf: 'center'}} />
       </Typography>
       <div>
-        <Link color="primary" href="#" onClick={preventDefault}>
-          Ver o balanço
-        </Link>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          color="primary"
+          onClick={()=> window.location.reload(false)}
+          className={classes.submit}
+        >Mudar o Avatar</Button>
       </div>
+      </>
     </React.Fragment>
   );
 }

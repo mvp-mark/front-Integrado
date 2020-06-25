@@ -35,6 +35,10 @@ export default function Coisinha(){
     const Search = '/Search';
     history.push(Search);
   }
+  function handleAdmin() {
+    const Admin = '/Admin';
+    history.push(Admin);
+  }
   function handleLogout() {
     const Logout = '/';
     history.push(Logout);
@@ -69,6 +73,12 @@ export default function Coisinha(){
       <ListItemText primary="Busca"  />
     </ListItem>
     <Divider />
+    <ListItem button onClick={handleAdmin}>
+      <ListItemIcon>
+        <PeopleIcon />
+      </ListItemIcon>
+      <ListItemText primary="Editar o Perfil"  />
+    </ListItem>
 <ListSubheader inset onClick={handleLogout}>Deslogar</ListSubheader>
   </div>
 );
