@@ -316,8 +316,8 @@ export default function CadProducts() {
               margin="normal"
               required
               fullWidth
-              name="location"
-              label="Localização"
+              name="layout"
+              label="Layout"
               // type="password"
               id="email"
               autoComplete="location"
