@@ -129,7 +129,7 @@ export default function CadShelves() {
 
   return (
     <>
-      <Navbar title="Cadastrar Localidade" />
+      <Navbar title="Cadastrar Layout" />
       <Container component="main" maxWidth="xs" style={{ backgroundColor: "#FFF" }}>
         <CssBaseline />
         <div className={classes.paper}>
@@ -137,7 +137,7 @@ export default function CadShelves() {
             <AddIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Cadastrar Localidade
+            Cadastrar Layout
         </Typography>
           <form className={classes.form} noValidate>
             <TextField
@@ -151,17 +151,39 @@ export default function CadShelves() {
               // autoComplete="email"
               autoFocus
             />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="andar"
-                label="Andar"
-                // type="password"
-                id="email"
-                autoComplete="location"
-              />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="rua"
+              label="Rua"
+              // type="password"
+              id="password"
+              autoComplete="SKU"
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="posicao"
+              label="Posição"
+              // type="password"
+              id="password"
+              autoComplete="SKU"
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="andar"
+              label="Andar"
+              // type="password"
+              id="email"
+              autoComplete="location"
+            />
             <TextField
               variant="outlined"
               margin="normal"
